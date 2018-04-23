@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Pirates of the Code-Bean</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Using CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+
+<div class="container">
+
+    <h3 class="center-align">Pirates of the Code-Bean </h3>
+
+    <h3 th:text="${result.message}" class="center-align purple-text">Whats Next?</h3>
+
+    <br/><br/>
+
+    <div class="row center-align">
+        <div class="col s2 m3">
+            <form th:action="@{/choose/1}" method="post">
+                <button type="submit" class="waves-effect waves-light btn-large blue accent-1">Button 1</button>
+            </form>
+        </div>
+        <div class="col s4 m3">
+            <form th:action="@{/choose/2}" method="post">
+                <button type="submit" class="waves-effect waves-light btn-large blue accent-1"
+                        th:disabled="${result.enable1}">Button 2</button>
+            </form>
+        </div>
+        <div class="col s4 m3">
+            <form th:action="@{/choose/3}" method="post">
+                <button type="submit" class="waves-effect waves-light btn-large blue accent-1"
+                        th:disabled="${result.enable2}">Button 3</button>
+            </form>
+        </div>
+        <div class="col s4 m3">
+            <form th:action="@{/choose/4}" method="post">
+                <button type="submit" class="waves-effect waves-light btn-large blue accent-1"
+                        th:disabled="${result.enable3}">Button 4</button>
+            </form>
+        </div>
+    </div>
+
+ </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+</body>
+</html>
